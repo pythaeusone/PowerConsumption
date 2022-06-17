@@ -221,7 +221,7 @@ class Calc{
 		try {
 			d = Double.parseDouble(removeComma(inputs));
 		}catch(NumberFormatException e) {
-			d = 0.0f;
+			d = 0.0;
 		}		
 		return d;
 	}
@@ -235,29 +235,29 @@ class Calc{
 	
 	private static double getHours() {		
 		double h = stringToNumber(MainView.textField_time.getText());
-		if(h < 25.0f & h > 0.0f)
+		if(h < 25.0 & h > 0.0)
 			return h/24*100;
 		else
 			MainView.textField_time.setText("24");
-		return 0.0f;
+		return 24/24*100;
 	}
 	
 	private static double getCent() {
 		double c = stringToNumber(MainView.textField_price.getText());
-		if(c > 0 & c < 10000f)
+		if(c > 0 & c < 10000)
 			return c/100;
 		else
-			MainView.textField_price.setText("1");
-		return 0.0f;
+			MainView.textField_price.setText("30");
+		return 30/100;
 	}
 	
 	private static double getWatt() {
 		double w = stringToNumber(MainView.textField_watt.getText());
-		if(w > 0 & w < 1000000f)
+		if(w > 0 & w < 1000000)
 			return w;
 		else
 			MainView.textField_watt.setText("1");
-		return 0.0f;
+		return 1;
 	}
 	
 	private static double getWattHours() {
